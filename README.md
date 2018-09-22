@@ -1,16 +1,12 @@
 # Git
 > 将已有的项目提交到Github
-
-1/$ git init // 在当前项目目录中生成本地git管理,并建立一个隐藏.git目录
-
-2/$ git add . // 添加当前目录中的所有文件到索引
-
-3/$ git commit -m "commit notes" // 提交到本地源码库，并附加提交注释
-
-4/$ git remote add origin git@github.com:hcly3015/learn.git // 提交远程github(learn.git对应新建项目的**.git)
-
-5/$ git push -u origin master // 把本地源码库push到github 别名为origin的远程项目中，确认提交
-
+``` bash
+1/$ git init //在当前项目目录中生成本地git管理,并建立一个隐藏.git目录
+2/$ git add . //添加当前目录中的所有文件到索引
+3/$ git commit -m "commit notes" //提交到本地源码库，并附加提交注释
+4/$ git remote add origin git@github.com:hcly3015/**.git //提交远程github(**.git对应新建Github项目的Repository)
+5/$ git push -u origin master //把本地源码库push到github 别名为origin的远程项目中，确认提交
+```
 
 > 删除命令
 
@@ -19,7 +15,7 @@ $ git remote rm origin
 
 > 从GitHub克隆到本地
 
-$ git clone git@github.com:hcly3015/learn.git
+$ git clone git@github.com:hcly3015/**.git
 
 
 > 本地文件修改后提交命令
