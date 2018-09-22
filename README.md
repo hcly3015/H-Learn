@@ -39,7 +39,7 @@ $ git remote rm origin
 
 ## vscode开发vue相关配置
 > vscode配置
-
+``` bash
 {
     "files.autoSave": "afterDelay",
     "editor.tabSize": 2,
@@ -47,6 +47,7 @@ $ git remote rm origin
     "vetur.format.defaultFormatter.html": "js-beautify-html",
     "vetur.format.defaultFormatter.js": "vscode-typescript",
 }
+```
 
 ## phpStudy:一键安装nginx环境(下载phpStudy安装配置即可)
 > nginx特点
@@ -114,6 +115,8 @@ server {
     proxy_busy_buffers_size    64k;
     proxy_temp_file_write_size 64k;
   }
+
+
   #.......其他部分省略，配置不变
 }
 ```
@@ -136,6 +139,4 @@ Git教程
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 
 图标库
-1/http://www.iconfont.cn
-
-2/http://fontawesome.dashgame.com/
+http://www.iconfont.cn  http://fontawesome.dashgame.com/
