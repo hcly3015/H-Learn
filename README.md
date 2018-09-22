@@ -115,9 +115,6 @@ server {
     proxy_busy_buffers_size    64k;
     proxy_temp_file_write_size 64k;
   }
-
-
-  #.......其他部分省略，配置不变
 }
 ```
 
@@ -126,12 +123,6 @@ server {
 掘金
 https://juejin.im/timeline
 
-Element-UI
-http://element-cn.eleme.io/#/zh-CN
-
-iView
-https://www.iviewui.com/
-
 前端资料 
 https://yuchengkai.cn/docs/zh/frontend/
 
@@ -139,4 +130,7 @@ Git教程
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 
 图标库
-http://www.iconfont.cn  http://fontawesome.dashgame.com/
+http://www.iconfont.cn
+
+字体库
+http://fontawesome.dashgame.com/
