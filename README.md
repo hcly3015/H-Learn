@@ -1,0 +1,167 @@
+# Git
+> 将已有的项目提交到Github
+
+1/$ git init // 在当前项目目录中生成本地git管理,并建立一个隐藏.git目录
+
+2/$ git add . // 添加当前目录中的所有文件到索引
+
+3/$ git commit -m "commit notes" // 提交到本地源码库，并附加提交注释
+
+4/$ git remote add origin git@github.com:hcly3015/learn.git // 提交远程github(learn.git对应新建项目的**.git)
+
+5/$ git push -u origin master // 把本地源码库push到github 别名为origin的远程项目中，确认提交
+
+
+> 删除命令
+
+$ git remote rm origin
+
+
+> 从GitHub克隆到本地
+
+$ git clone git@github.com:hcly3015/learn.git
+
+
+> 本地文件修改后提交命令
+
+1/$ git commit -a -m 'commit notes' // 提交到本地源码库，并附加提交注释
+
+2/$ git push origin master // 把本地源码库push到github 别名为origin的远程项目中，确认提交
+
+
+
+## 开发Vue项目（脚手架构建）
+1/安装node.js
+
+2/安装cnpm(淘宝镜像：$ npm install -g cnpm --registry=https://registry.npm.taobao.org)
+
+3/vue安装($ cnpm install vue)
+
+4/安装vue-cli脚手架构建工具($ cnpm install --global vue-cli)
+
+5/创建一个基于webpack模板的新项目(指定目录 $ vue init webpack my-project)
+
+
+
+## vscode开发vue相关配置
+> vscode配置
+
+{
+
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+}
+
+
+
+## phpStudy:一键安装nginx环境(下载phpStudy安装配置即可)
+> nginx特点
+
+基本Http服务，可以作为Http代理服务器和反向代理服务器，支持通过缓存加速访问，可以完成简单的负载均衡和容错，支持包过滤功能，支持SSL
+
+高级Http服务，可以进行自定义配置，支持虚拟主机，支持URL重定向，支持网络监控，支持流媒体传输等
+
+邮件代理服务器，支持IMAP/POP3代理服务功能，支持内部SMTP代理服务功能
+
+
+## Xshell(下载安装Xshell)
+> 利用Xshell连接云服务器地址发布项目
+
+1/$ yum install lrzsz(通过Xshell上传文件可以下载安装rz。在Xshell中运行此命令)
+
+2/$ cd 目录(利用cd命令定位到需要的目录下)
+
+3/$ rm -rf *(清空当前文件夹下所有的文件，注意当前文件夹目录，勿删错)
+
+4/$ rz(利用rz命令上传压缩包文件)
+
+5/$ unzip backend20180505.zip(解压上传的压缩包)
+
+6/$ rm -f backend20180505.zip(删除压缩包文件)
+
+7/$ mv backend20180505/* ./(移出文件)
+
+8/$ rm -rf backend20180505(删除目录backend20180505下的所有文件、子目录下的所有文件和目录、删除文件夹本身)
+
+9/$ ll(显示信息)
+
+## Nginx
+> nginx部署vue打包项目
+
+1/找到nginx安装的目录，启动nginx.exe
+(或者启动命令 $ cd E:\nginx-1.15.3\nginx-1.15.3。 $ start nginx)
+
+3/$ tasklist /fi "imagename eq nginx.exe"查看nginx任务进程(ps:需要在安装的根路径下执行)
+
+4/修改nginx配置文件，配置文件为conf下的nginx.conf,修改nginx.conf中的server配置片段
+
+``` bash
+server {
+  listen       8190;
+  server_name  127.0.0.1;
+
+  #charset koi8-r;
+  #access_log  logs/host.access.log  main;
+  root    "E:/hxx/github/vue2-admin/dist"; #vue项目的打包后的dist
+  
+  location / {
+    try_files $uri $uri/ @router; #需要指向下面的@router否则会出现vue的路由在nginx中刷新出现404
+    index  index.html index.htm;
+  }
+  #对应上面的@router，主要原因是路由的路径资源并不是一个真实的路径，所以无法找到具体的文件
+  #因此需要rewrite到index.html中，然后交给路由在处理请求资源
+  location @router {
+    rewrite ^.*$ /index.html last;
+  }
+
+  location /api/ {
+    proxy_pass http://127.0.0.1:8091; #对应api地址
+    proxy_redirect     off;
+    proxy_set_header   Host             $host;
+    proxy_set_header   X-Real-IP        $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+    proxy_max_temp_file_size   0;
+    proxy_connect_timeout      90;
+    proxy_send_timeout         90;
+    proxy_read_timeout         90;
+    proxy_buffer_size          64k;
+    proxy_buffers              4 32k;
+    proxy_busy_buffers_size    64k;
+    proxy_temp_file_write_size 64k;
+  }
+  #.......其他部分省略，配置不变
+}
+```
+
+5/$ nginx -s reload(完成nginx配置后重新加载配置文件)
+
+6/部署成功，浏览器地址：127.0.0.1:8190
+
+
+
+## 其它相关地址
+掘金
+https://juejin.im/timeline
+
+Element-UI
+http://element-cn.eleme.io/#/zh-CN
+
+iView
+https://www.iviewui.com/
+
+前端资料 
+https://yuchengkai.cn/docs/zh/frontend/
+
+Git教程
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+
+图标库
+
+1/http://www.iconfont.cn
+
+2/http://fontawesome.dashgame.com/
+
