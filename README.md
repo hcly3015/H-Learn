@@ -26,6 +26,7 @@ $ git remote rm origin
 
 ## 开发Vue项目
 > 脚手架构建
+
 1/安装node.js
 
 2/安装cnpm(淘宝镜像：$ npm install -g cnpm --registry=https://registry.npm.taobao.org)
@@ -38,6 +39,7 @@ $ git remote rm origin
 
 ## vscode开发vue相关配置
 > vscode配置
+
 {
     "files.autoSave": "afterDelay",
     "editor.tabSize": 2,
@@ -48,6 +50,7 @@ $ git remote rm origin
 
 ## phpStudy:一键安装nginx环境(下载phpStudy安装配置即可)
 > nginx特点
+
 1/基本Http服务，可以作为Http代理服务器和反向代理服务器，支持通过缓存加速访问，可以完成简单的负载均衡和容错，支持包过滤功能，支持SSL
 
 2/高级Http服务，可以进行自定义配置，支持虚拟主机，支持URL重定向，支持网络监控，支持流媒体传输等
@@ -116,7 +119,7 @@ server {
 ```
 
 ## 其它相关地址
-``` bash
+
 掘金
 https://juejin.im/timeline
 
@@ -134,5 +137,5 @@ https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b
 
 图标库
 1/http://www.iconfont.cn
+
 2/http://fontawesome.dashgame.com/
-```
