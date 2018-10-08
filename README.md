@@ -18,6 +18,11 @@ $ git clone git@github.com:hcly3015/**.git
 1/$ git commit -a -m 'commit notes'  //提交到本地源码库，并附加提交注释
 2/$ git push origin master  //把本地源码库push到github别名为origin的master分支远程项目中
 ```
+``` bash
+$ git fetch origin master  //从远程的origin仓库的master分支下载代码到本地的origin master
+$ git log -p master.. origin/master  //比较本地的仓库和远程参考的区别
+$ git merge origin/master  //把远程下载下来的代码合并到本地仓库，远程的和本地的合并
+```
 
 > 删除命令
 ``` bash
