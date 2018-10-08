@@ -38,14 +38,17 @@ $ git remote rm origin
 5/创建一个基于webpack模板的新项目(指定目录 $ vue init webpack my-project)
 
 ## vscode开发vue相关配置
-> vscode配置
+> vscode配置建议
 ``` bash
 {
-    "files.autoSave": "afterDelay",
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "vetur.format.defaultFormatter.html": "js-beautify-html",
-    "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "files.autoSave": "afterDelay",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
 }
 ```
 
