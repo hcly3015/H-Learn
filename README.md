@@ -57,6 +57,27 @@ $ git remote rm origin
 }
 ```
 
+## PM2
+> PM2相关命令
+``` bash
+全局安装 pm2 
+$ npm install pm2 -g
+
+更新
+$ pm2 update
+
+在项目中package.json中增加了一条
+"pm2": "pm2 start processes.json"
+在启动就直接输入如下命令
+$ npm run pm2
+
+$ pm2 stop [app-name|id]    #停止某一个进程，可以使用app-name或者id
+$ pm2 stop all              #停止所有进程
+$ pm2 restart all           #重启所有的进程
+$ pm2 delete [app-name|id]  #删除并停止进程
+$ pm2 delete all            #删除并停止所有进程
+```
+
 ## phpStudy:一键安装nginx环境(下载phpStudy安装配置即可)
 > nginx特点
 
