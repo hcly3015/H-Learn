@@ -1,11 +1,11 @@
 # Git
 > 将已有的项目提交到Github
 ``` bash
-1/$ git init  //在当前项目目录中生成本地git管理,并建立一个隐藏.git目录
-2/$ git add .  //添加当前目录中的所有文件到索引
-3/$ git commit -m "commit notes"  //提交到本地源码库，并附加提交注释
-4/$ git remote add origin git@github.com:hcly3015/**.git  //提交远程github(**.git对应新建Github项目的Repository)
-5/$ git push -u origin master  //把本地源码库push到github 别名为origin的远程项目中，确认提交
+1/$ git init   #在当前项目目录中生成本地git管理,并建立一个隐藏.git目录
+2/$ git add .  #添加当前目录中的所有文件到索引
+3/$ git commit -m "commit notes"  #提交到本地源码库，并附加提交注释
+4/$ git remote add origin git@github.com:hcly3015/**.git  #提交远程github(**.git对应新建Github项目的Repository)
+5/$ git push -u origin master  #把本地源码库push到github 别名为origin的远程项目中，确认提交
 ```
 
 > 从GitHub克隆到本地
@@ -15,18 +15,23 @@ $ git clone git@github.com:hcly3015/**.git
 
 > 本地文件修改后提交命令
 ``` bash
-1/$ git commit -a -m 'commit notes'  //提交到本地源码库，并附加提交注释
-2/$ git push origin master  //把本地源码库push到github别名为origin的master分支远程项目中
-```
-``` bash
-$ git fetch origin master  //从远程的origin仓库的master分支下载代码到本地的origin master
-$ git log -p master.. origin/master  //比较本地的仓库和远程参考的区别
-$ git merge origin/master  //把远程下载下来的代码合并到本地仓库，远程的和本地的合并
+1/$ git commit -a -m 'commit remark'  #提交到本地源码库，并附加提交注释
+2/$ git push origin master            #把本地源码库push到github别名为origin的master分支远程项目中
 ```
 
 > 删除命令
 ``` bash
 $ git remote rm origin
+```
+
+> 合并分支
+``` bash
+$ git branch               #先查看下当前的本地和远程分支
+$ git checkout dev         #切换到dev分支
+$ git pull dev             #将远程分支dev拉下来
+$ git checkout master      #切换到master分支
+$ git merge dev            #合并dev分支到本地master分支(上一步已经切换到master分支)
+$ git push origin master   #将合并的本地master分支推送到远程master
 ```
 
 ## 开发Vue项目
@@ -66,8 +71,7 @@ $ npm install pm2 -g
 更新
 $ pm2 update
 
-在项目中package.json中增加了一条
-"pm2": "pm2 start processes.json"
+在项目中package.json中增加了一条 "pm2": "pm2 start processes.json"
 在启动就直接输入如下命令
 $ npm run pm2
 
@@ -91,25 +95,24 @@ $ pm2 delete all            #删除并停止所有进程
 ## Xshell(下载安装Xshell)
 > 利用Xshell连接云服务器地址发布项目
 ``` bash
-1/$ yum install lrzsz  (通过Xshell上传文件可以下载安装rz。在Xshell中运行此命令)
-2/$ cd **  目录(利用cd命令定位到需要的目录下)
-3/$ rm -rf *  (清空当前文件夹下所有的文件，注意当前文件夹目录，勿删错)
-4/$ rz  (利用rz命令上传压缩包文件，或者执行拖动文件)
-5/$ unzip backend20180505.zip  (解压上传的压缩包)
-6/$ rm -f backend20180505.zip  (删除压缩包文件)
-7/$ mv backend20180505/* ./  (移出文件)
-8/$ rm -rf backend20180505  (删除目录backend20180505下的所有文件、子目录下的所有文件和目录、删除文件夹本身)
-9/$ ll  (显示信息)
+1/$ yum install lrzsz  #(通过Xshell上传文件可以下载安装rz。在Xshell中运行此命令)
+2/$ cd **              #目录(利用cd命令定位到需要的目录下)
+3/$ rm -rf *           #(清空当前文件夹下所有的文件，注意当前文件夹目录，勿删错)
+4/$ rz                 #(利用rz命令上传压缩包文件，或者执行拖动文件)
+5/$ unzip backend20180505.zip  #(解压上传的压缩包)
+6/$ rm -f backend20180505.zip  #(删除压缩包文件)
+7/$ mv backend20180505/* ./    #(移出文件)
+8/$ rm -rf backend20180505     #(删除目录backend20180505下的所有文件、子目录下的所有文件和目录、删除文件夹本身)
+9/$ ll  #(显示信息)
 ```
 
 ## Nginx
 > nginx部署vue打包项目
 ``` bash
-1/找到nginx安装的目录，启动nginx.exe
-(或者启动命令 $ cd E:\nginx-1.15.3\nginx-1.15.3。 $ start nginx)
-2/$ tasklist /fi "imagename eq nginx.exe"  查看nginx任务进程(ps:需要在安装的根路径下执行)
+1/找到nginx安装的目录，启动nginx.exe #(或者启动命令 $ cd E:\nginx-1.15.3\nginx-1.15.3。 $ start nginx)
+2/$ tasklist /fi "imagename eq nginx.exe"  #查看nginx任务进程(ps:需要在安装的根路径下执行)
 3/修改nginx配置文件，配置文件为conf下的nginx.conf,修改nginx.conf中的server配置片段，如下：
-4/$ nginx -s reload  (完成nginx配置后重新加载配置文件)
+4/$ nginx -s reload  #(完成nginx配置后重新加载配置文件)
 5/部署成功，浏览器地址：127.0.0.1:8190
 ```
 ``` bash
