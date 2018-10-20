@@ -108,7 +108,7 @@ $ pm2 delete all            #删除并停止所有进程
 $ vim /文件名   #编辑文件
 $ Esc          #退出编辑状态
 $ :wq          #保存并退出
-$ Shift+zz     #保存并退出
+$ Shift + zz   #保存并退出
 ```
 
 ## Nginx
