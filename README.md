@@ -37,15 +37,16 @@ $ git push origin master   #将合并的本地master分支推送到远程master
 ## 开发Vue项目
 > 脚手架构建
 
-1/安装node.js
+安装node.js
 
-2/安装cnpm(淘宝镜像：$ npm install -g cnpm --registry=https://registry.npm.taobao.org)
+安装cnpm(淘宝镜像：$ npm install -g cnpm --registry=https://registry.npm.taobao.org)
 
-3/vue安装($ cnpm install vue)
+vue安装($ cnpm install vue)
 
-4/安装vue-cli脚手架构建工具($ cnpm install --global vue-cli)
+1/安装vue-cli脚手架构建工具($ cnpm install -g vue-cli)
 
-5/创建一个基于webpack模板的新项目(指定目录 $ vue init webpack my-project)
+2/创建一个基于webpack模板的新项目(指定目录 $ vue init webpack my-project)
+
 
 ## vscode开发vue相关配置
 > vscode配置建议
