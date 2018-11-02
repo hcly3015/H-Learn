@@ -1,0 +1,102 @@
+1. 
+Spread operator（展开操作符）将数组展开为其对应的元素。它也可以用于对象字面量。
+示例：
+假如你想展示一个喜爱的水果列表，但不是通过一个循环函数的方式。你可以用一个扩展操作符，像这样：
+const favoriteFood = ['Pizza', 'Fries', 'Swedish-meatballs'];
+console.log(...favoriteFood);
+//Pizza Fries Swedish-meatballs
+
+2. 
+for...of 语句循环/遍历集合，为你提供了修改特定元素的功能。 它取代传统的 for-loop 方式。
+示例：
+假设你有一个工具箱，你想要展示里面所有的工具。for...of 迭代器会让它变得更简单。
+const toolBox = ['Hammer', 'Screwdriver', 'Ruler']
+for(const item of toolBox) {
+console.log(item)
+}
+// Hammer
+// Screwdriver
+// Ruler
+
+3. 
+include() 方法被用来检查数集合中是否包含指定的元素，如果存在则返回 true，否则返回 false。 请记住，它是区分大小写的：如果集合中的某项元素是 SCHOOL，并且但你查询的是 school ，那么它将会返回 false。
+示例：
+比如，无论出于什么原因，你不知道车库里有什么车，你需要一个系统检查你想要的车是否在车库里。includes() 可以拯救你！
+const garge = ['BMW', 'AUDI', 'VOLVO'];
+const findCar = garge.includes('BMW');
+console.log(findCar);
+// true
+
+4. 
+some() 方法检查在数组中是否存在某些元素，如果存在返回true，否则返回 false 。这和 includes() 方法相似，但是 some() 方法的参数是一个函数，而不是一个字符串。
+示例：
+假如你是一个俱乐部老板，并不在乎谁进入这俱乐部吧。但是有些人是不允许进来的，因为他们已经喝了很多酒（我的想象力很好）。查看以下 ES5 和 ES6 之间的差异：
+ES5:
+const age = [16, 14, 18];
+age.some(function(person) {
+return person >= 18;
+});
+// Output: true
+ES6:
+const age = [16, 14, 18];
+age.some((person) => person >= 18);
+// true
+
+5. 
+every() 方法循环遍历数组，检查数组中的每个元素项，并返回 true 或 false 。与 some() 概念相似。但是每一项都必须通过条件表达式，否则返回 false 。
+ES5:
+const age = [15, 20, 19];
+age.every(function(person) {
+return person >= 18;
+})
+// Output: false
+ES6:
+const age = [15, 20, 19];
+age.every((person)=> person >= 18);
+// false
+
+6. 
+filter() 方法创建一个包含所有通过测试的元素的新数组。
+示例：
+假如你只想要大于或者等于30的价格，过滤掉其他价格。
+ES5:
+//array
+const prices = [25, 30, 15, 55, 40, 10];
+prices.filter(function(price){
+return price >= 30;
+})
+// Output: [30, 55, 40]
+ES6:
+const prices = [25, 30, 15, 55, 40, 10];
+prices.filter((price) => price >= 30);
+// [30, 55, 40]
+
+7. 
+在返回新数组方面，map() 方法跟 filter() 方法相似。但是，唯一的区别是它用于修改数组中的元素项。
+示例：
+假如你有一份价格清单。 您的经理需要一个清单，以便展示在税率增加25％后的新价格。 map()方法可以帮助你。
+ES5:
+const productPriceList = [200, 356, 1500, 5000];
+productPriceList.map(function(item){
+return item * 0.75;
+})
+// [150, 267, 1125, 3750]
+ES6:
+const productPriceList = [200, 356, 1500, 5000];
+productPriceList.map((item) => item * 0.75);
+// [150, 267, 1125, 3750]
+
+8. 
+reduce()方法可用于将数组转换为其他内容，可以是整数，对象，promises 链（顺序执行的promises）等等。出于实际原因，一个简单的用例是对整数列表求和。简而言之，它将整个数组“缩短”为一个你想要的值。
+示例：
+假如你想得到这一周的消费总和，reduce()可以帮你实。
+ES5:
+const weeklyExpenses = [200, 350, 1500, 5000, 450, 680, 350]
+weeklyExpenses.reduce(function(first, last) {
+return first + last;
+})
+// 8530
+ES6:
+const weeklyExpenses = [200, 350, 1500, 5000, 450, 680, 350]
+weeklyExpenses.reduce((first, last) => first + last);
+// 8530
