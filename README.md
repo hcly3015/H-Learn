@@ -52,15 +52,24 @@ vue安装($ cnpm install vue)
 > vscode配置建议
 ``` bash
 {
-  "files.autoSave": "afterDelay",
-  "editor.tabSize": 2,
-  "editor.detectIndentation": false,
-  "prettier.singleQuote": true,
-  "prettier.semi": false,
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"files.autoSave": "afterDelay",
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"prettier.singleQuote": true,
+	"prettier.semi": false,
+	"vetur.format.defaultFormatter.html": "js-beautify-html",
+	"vetur.format.defaultFormatter.js": "vscode-typescript",
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+
+  "editor.fontSize": 15,
+  "editor.lineHeight": 24,
+  "editor.fontLigatures": true,
 }
+插件
+Chinese (Simplified) Language Pack for Visual Studio Code
+Material Theme
+Prettier - Code formatter
+Prettier-Standard - JavaScript formatter
 ```
 
 ## PM2
