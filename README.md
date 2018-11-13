@@ -26,12 +26,22 @@ $ git remote rm origin
 
 > 合并分支
 ``` bash
-$ git branch               #先查看下当前的本地和远程分支
-$ git checkout dev         #切换到dev分支
-$ git pull dev             #将远程分支dev拉下来
-$ git checkout master      #切换到master分支
-$ git merge dev            #合并dev分支到本地master分支(上一步已经切换到master分支)
-$ git push origin master   #将合并的本地master分支推送到远程master
+假如我们现在在dev分支上，刚开发完项目，执行了下列命令
+git add .
+git commit -m 'devModify'
+git push -u origin dev
+然后我们要把dev分支的代码合并到master分支上 该如何？ 
+首先切换到master分支上
+git checkout master
+如果是多人开发的话 需要把远程master上的代码pull下来
+git pull origin master
+如果是自己一个开发就没有必要了，为了保险期间还是pull
+然后我们把dev分支的代码合并到master上
+git merge dev
+然后查看状态
+git status
+将合并的本地master分支推送到远程master
+git push origin master
 ```
 
 ## 开发Vue项目
