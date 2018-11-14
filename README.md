@@ -80,6 +80,7 @@ Chinese (Simplified) Language Pack for Visual Studio Code
 Material Theme
 Prettier - Code formatter
 Prettier-Standard - JavaScript formatter
+Nest Comments
 ```
 
 ## PM2
