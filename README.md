@@ -142,6 +142,19 @@ $ Shift + Insert
 $ u
 恢复上一步被撤销的操作
 $ Ctrl+r
+tar命令 (v：显示步骤)
+将文件夹20181113153721压缩成20181113153721.tar.gz
+$ tar -zcvf 20181113153721.tar.gz 20181113153721
+解压20181113153721.tar.gz
+$ tar -zxvf 20181113153721.tar.gz
+
+将文本拷贝到远程地址
+$ scp 20181113.tar.gz root@47.107.119.17
+控制远程
+$ ssh root@47.107.119.17 "pwd"
+将远程上的文件解压
+$ ssh root@47.107.119.17 "cd /tmp && tar vxf 20181113.tar.gz"
+
 
 1/Linux下nginx安装
 $ yum install nginx
