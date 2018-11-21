@@ -27,55 +27,52 @@ $ git remote rm origin
 > 合并分支
 ``` bash
 假如我们现在在dev分支上，刚开发完项目，执行了下列命令
-git add .
-git commit -m 'devModify'
-git push -u origin dev
+$ git add .
+$ git commit -m 'modify'
+$ git push -u origin dev
 然后我们要把dev分支的代码合并到master分支上 该如何？ 
 首先切换到master分支上
-git checkout master
+$ git checkout master
 如果是多人开发的话 需要把远程master上的代码pull下来
-git pull origin master
+$ git pull origin master
 如果是自己一个开发就没有必要了，为了保险期间还是pull
 然后我们把dev分支的代码合并到master上
-git merge dev
+$ git merge dev
 然后查看状态
-git status
+$ git status
 将合并的本地master分支推送到远程master
-git push origin master
+$ git push origin master
 ```
 
 ## 开发Vue项目
 > 脚手架构建
-
+``` bash
 安装node.js
-
 安装cnpm(淘宝镜像：$ npm install -g cnpm --registry=https://registry.npm.taobao.org)
-
 vue安装($ cnpm install vue)
-
 1/安装vue-cli脚手架构建工具($ cnpm install -g vue-cli)
-
 2/创建一个基于webpack模板的新项目(指定目录 $ vue init webpack my-project)
-
+```
 
 ## vscode开发vue相关配置
 > vscode配置建议
 ``` bash
 {
-	"files.autoSave": "afterDelay",
-	"editor.tabSize": 2,
-	"editor.detectIndentation": false,
-	"prettier.singleQuote": true,
-	"prettier.semi": false,
-	"vetur.format.defaultFormatter.html": "js-beautify-html",
-	"vetur.format.defaultFormatter.js": "vscode-typescript",
-	"javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "files.autoSave": "afterDelay",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
 
   "editor.fontSize": 15,
   "editor.lineHeight": 24,
   "editor.fontLigatures": true,
 }
-插件
+
+相关插件
 Chinese (Simplified) Language Pack for Visual Studio Code
 Material Theme
 Prettier - Code formatter
@@ -130,6 +127,47 @@ $ vim /文件名   #编辑文件
 $ Esc          #退出编辑状态
 $ :wq          #保存并退出
 $ Shift + zz   #保存并退出
+```
+
+## Linux
+> 相关安装
+``` bash
+Linux监听端口3306命令
+$ ss -luntpa | grep 3306
+
+1/Linux下nginx安装
+$ yum install nginx
+安装完成后相关配置目录
+Linux命令
+cd /etc/nginx
+vim nginx.conf
+
+2/Linux下安装mysql
+$ yum install mysql
+$ yum install mysql-server
+如果报错异常：No package mysql-server avallable.问题.
+执行以下两个命令
+$ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+$ rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+重启mysql命令
+$ systemctl restart mysqld
+
+
+3/有域名后申请证书，配置https
+申请免费正式
+$ sudo su
+$ yum install socat -y
+$ curl https://get.acme.sh | sh
+$ exit
+$ sudo su
+停掉nginx
+$ nginx -s stop
+$ acme.sh --issue -d 51130.cf -d www.51130.cf --standalone    # 51130.cf为你申请的域名
+$ acme.sh  --installcert  -d  51130.cf   \
+        --key-file   /etc/nginx/ssl/51130.cf.key \
+        --fullchain-file /etc/nginx/ssl/fullchain.cer \
+        --reloadcmd  "service nginx force-reload"
 ```
 
 ## Nginx
@@ -192,3 +230,9 @@ http://www.iconfont.cn
 
 字体库
 http://fontawesome.dashgame.com/
+
+申请免费域名(翻墙)
+https://www.freenom.com
+
+申请免费证书教程
+https://github.com/Neilpang/acme.sh
