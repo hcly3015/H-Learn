@@ -138,6 +138,10 @@ $ ss -luntpa | grep 3306
 $ Ctrl + Insert
 粘贴
 $ Shift + Insert
+撤销上一步的操作
+$ u
+恢复上一步被撤销的操作
+$ Ctrl+r
 
 1/Linux下nginx安装
 $ yum install nginx
