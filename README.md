@@ -149,11 +149,11 @@ $ tar -zcvf 20181113153721.tar.gz 20181113153721
 $ tar -zxvf 20181113153721.tar.gz
 
 将文本拷贝到远程地址
-$ scp 20181113.tar.gz root@47.107.119.17
+$ scp 20181113.tar.gz root@148.70.59.54
 控制远程
-$ ssh root@47.107.119.17 "pwd"
+$ ssh root@148.70.59.54 "pwd"
 将远程上的文件解压
-$ ssh root@47.107.119.17 "cd /tmp && tar vxf 20181113.tar.gz"
+$ ssh root@148.70.59.54 "cd /tmp && tar vxf 20181113.tar.gz"
 
 
 1/Linux下nginx安装
