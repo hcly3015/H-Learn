@@ -132,8 +132,12 @@ $ Shift + zz   #保存并退出
 ## Linux
 > 相关安装
 ``` bash
-Linux监听端口3306命令
+监听端口3306命令
 $ ss -luntpa | grep 3306
+复制(鼠标选中)
+$ Ctrl + Insert
+粘贴
+$ Shift + Insert
 
 1/Linux下nginx安装
 $ yum install nginx
