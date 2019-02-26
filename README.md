@@ -235,6 +235,35 @@ server {
 }
 ```
 
+## 
+> VPN
+``` bash
+shadowsocks官网：https://shadowsocks.org/en/index.html。下载安装文件
+在Linux中，etc目录下新建文件ss.json(文件名自定义)
+$ vi ss.json
+内容：
+{
+  "server":"65.49.222.163",
+  "cal_address":"127.0.0.1",
+  "local_port":"1080",
+  "port_password":{
+      "9588":"123456"
+  },
+  "timeout":300,
+  "method":"aes-256-cfb",
+  "fast_open":false
+}
+需要改动项
+server:服务云地址
+port_passwor: 端口：密码
+
+然后运行命令
+$ ssserver -c ss.json -d start
+
+设置开机启动
+配置文档：https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+```
+
 ## 其它相关地址
 
 掘金
